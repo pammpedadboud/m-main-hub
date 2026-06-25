@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026世界杯 · 中国区在线指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafafa;
+            color: #1e293b;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            max-width: 680px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2.4rem 0 3rem;
+            flex: 1;
+        }
+
+        /* hero header */
+        .hero {
+            margin-bottom: 3.2rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1.6rem;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #0f172a;
+        }
+
+        .hero-title span {
+            display: inline-block;
+            background: #eef2ff;
+            padding: 0 0.3rem;
+            border-radius: 4px;
+        }
+
+        .hero-sub {
+            margin-top: 0.6rem;
+            font-size: 1.05rem;
+            color: #475569;
+            max-width: 520px;
+        }
+
+        /* 背景卡片 */
+        .context-card {
+            background: #ffffff;
+            border: 1px solid #e9edf2;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .context-card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #1e293b;
+            border-left: 4px solid #3b82f6;
+            padding-left: 0.9rem;
+        }
+
+        .context-card p {
+            margin-bottom: 0.9rem;
+            color: #334155;
+        }
+
+        .context-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 三段自然介绍 */
+        .section-block {
+            margin-bottom: 2.6rem;
+        }
+
+        .section-block h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .section-block h3::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: 400;
+        }
+
+        .section-block p {
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        .section-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .inline-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        /* FAQ 摘要卡片 */
+        .faq-digest {
+            background: #f8fafc;
+            border-radius: 18px;
+            padding: 1.6rem 2rem;
+            margin: 2.4rem 0 2.8rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .faq-digest h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.9rem;
+            letter-spacing: 0.01em;
+        }
+
+        .faq-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-q {
+            color: #475569;
+            min-width: 4em;
+            font-weight: 450;
+        }
+
+        .faq-a {
+            color: #1e293b;
+        }
+
+        /* 页尾提示 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.4rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.92rem;
+            color: #64748b;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-note p {
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-note a {
+            color: #1e293b;
+            text-decoration: none;
+            border-bottom: 1px solid #cbd5e1;
+            transition: border-color 0.15s;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #3b82f6;
+            color: #0f172a;
+        }
+
+        /* 响应式 */
+        @media (max-width: 540px) {
+            .page-wrapper {
+                width: 92%;
+                padding: 1.6rem 0 2rem;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .context-card {
+                padding: 1.4rem 1.4rem;
+            }
+            .faq-digest {
+                padding: 1.2rem 1.4rem;
+            }
+            .faq-item {
+                flex-direction: column;
+                gap: 0.1rem;
+                margin-bottom: 1rem;
+            }
+            .faq-q {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .section-block h3 {
+                padding-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- hero 横幅 -->
+        <header class="hero">
+            <h1 class="hero-title">
+                <span>世界杯</span> · 中国区观赛指南
+            </h1>
+            <p class="hero-sub">
+                如果你正在找关于2026年世界杯的实用信息——赛程、看点、中国球迷的参与方式，这里就是起点。
+            </p>
+        </header>
+
+        <!-- 背景说明卡片 -->
+        <div class="context-card">
+            <h2>为什么会有这个网站？</h2>
+            <p>
+                很多人一听到「世界杯」就热血沸腾，但真到要查比赛时间、转播平台、中国队相关动态时，又觉得信息太散。 
+                <strong>chinaonline-fifa2026.com</strong> 就是想把这些碎片整理好——用一个干净、直接的方式，让你快速找到自己关心的内容。
+            </p>
+            <p>
+                不要花里胡哨的广告轰炸，也不需要注册才能看。打开页面，该有的都有：赛程日历、球队分析、举办城市速览，以及从中国出发的观赛小贴士。
+            </p>
+        </div>
+
+        <!-- 三段自然介绍（杂志式） -->
+        <div class="section-block">
+            <h3>一眼看懂赛程</h3>
+            <p>
+                本届世界杯扩军后比赛场次多了，小组赛阶段会有大量跨时区对决。网站首页直接用表格和时区转换器帮你标出北京时间，不用再自己倒时差。不管是凌晨还是晚饭后的场次，提前知道，安排起来更从容。
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h3>中国球迷的专属视角</h3>
+            <p>
+                从国足预选赛动态，到中文解说频道汇总，再到当地华人观赛社群的信息，网站特意整理了一系列「中国关联」内容。如果你想知道国内哪些平台有版权、签证政策有没有变化，或者怎样在比赛城市找到中餐馆，这里比搜索引擎更省力。
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h3>不只比赛，更是文化</h3>
+            <p>
+                世界杯从来不只是90分钟的事情。主办国的风土人情、球迷区的活动、纪念品攻略……网站里有一块轻量级的「场外指南」，帮你把看球变成一次完整的文化体验。不管是计划去现场还是在家守候，都能发现一些意想不到的乐趣。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要（保持杂志感） -->
+        <div class="faq-digest">
+            <h4>常见疑问·速览</h4>
+            <div class="faq-item">
+                <span class="faq-q">Q：网站更新频率？</span>
+                <span class="faq-a">A：预选赛阶段每周更新，决赛圈倒计时开始后基本做到每日同步。</span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-q">Q：需要付费吗？</span>
+                <span class="faq-a">A：完全免费，也没有隐藏收费栏目。纯粹的信息整理。</span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-q">Q：手机上看方便吗？</span>
+                <span class="faq-a">A：页面做了响应式适配，手机浏览器直接打开就行，不用下额外App。</span>
+            </div>
+        </div>
+
+        <!-- 页尾访问提示 + 自然嵌入链接 -->
+        <footer class="footer-note">
+            <p>
+                想深入了解？直接把 <a href="https://chinaonline-fifa2026.com" class="inline-link">世界杯</a> 加入书签，随时回来看。
+            </p>
+            <p>
+                — 整季陪伴，从小组赛到决赛 —
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
